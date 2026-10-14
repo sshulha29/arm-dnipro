@@ -1,0 +1,99 @@
+:root {
+  --navy: #1B3A4B;
+  --gold: #C9A227;
+  --bg: #F4F1EA;
+  --text: #1A1A1A;
+  --danger: #9B2C2C;
+  --card: #fff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, Segoe UI, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 0;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand { display: flex; gap: 12px; align-items: center; }
+.logo {
+  width: 40px; height: 40px;
+  background: var(--gold);
+  color: var(--navy);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.status-badge {
+  background: #2d6a4f;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+main { padding: 24px 0 48px; }
+h1 { font-size: 28px; margin: 0 0 8px; color: var(--navy); }
+.lead { margin: 0 0 24px; color: #444; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid #e0ddd5;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.field { margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-bottom: 4px; font-size: 14px; }
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+}
+button.primary {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.primary:hover { background: #122a36; }
+
+.result {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f0f7f0;
+  border: 1px solid #b7e4c7;
+}
+.result.error { background: #fef2f2; border-color: #f5c2c7; color: var(--danger); }
+
+.info ul { padding-left: 20px; }
+footer {
+  background: var(--navy);
+  color: #ddd;
+  padding: 16px 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  h1 { font-size: 22px; }
+  header .container { flex-direction: column; gap: 8px; align-items: flex-start; }
+}
