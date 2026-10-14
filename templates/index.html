@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>АРМ Дніпро — Сектор МАСЦО</title>
+  <link rel="canonical" href="https://arm.municipalnavarta.online/">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="brand">
+        <span class="logo">МВ</span>
+        <div>
+          <strong>КП «Муніципальна варта»</strong>
+          <span>АРМ Дніпро · Сектор МАСЦО</span>
+        </div>
+      </div>
+      <div class="status-badge" id="alertStatus">Статус: норма</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Автоматизоване робоче місце чергового сектору МАСЦО</h1>
+    <p class="lead">Відправка оповіщень у Telegram, включно з GIF-анімаціями.</p>
+
+    <section class="panel">
+      <h2>Відправити повідомлення</h2>
+      <form id="sendForm">
+        <div class="field">
+          <label for="bot_token">Bot Token (або з .env)</label>
+          <input type="password" id="bot_token" name="bot_token" placeholder="123456:ABC-DEF...">
+        </div>
+        <div class="field">
+          <label for="chat_id">Chat ID / канал</label>
+          <input type="text" id="chat_id" name="chat_id" placeholder="-1001234567890 або @channel">
+        </div>
+        <div class="field">
+          <label for="text">Текст / підпис</label>
+          <textarea id="text" name="text" rows="3" placeholder="Повідомлення для чергової служби"></textarea>
+        </div>
+        <div class="field">
+          <label for="gif_url">URL GIF-анімації</label>
+          <input type="url" id="gif_url" name="gif_url" placeholder="https://example.com/alert.gif">
+        </div>
+        <div class="field">
+          <label for="gif_file">або завантажити файл GIF / MP4</label>
+          <input type="file" id="gif_file" name="gif_file" accept="image/gif,video/mp4">
+        </div>
+        <button type="submit" class="primary">Надіслати в Telegram</button>
+      </form>
+      <div id="result" class="result" hidden></div>
+    </section>
+
+    <section class="info">
+      <h2>Інструкція</h2>
+      <ul>
+        <li>Створіть бота через @BotFather і отримайте токен.</li>
+        <li>Додайте бота в канал або чат чергової служби та отримайте chat_id.</li>
+        <li>Для GIF використовуйте sendAnimation (підтримується GIF або MP4 без звуку до 50 МБ).</li>
+        <li>Токен зберігайте тільки на сервері. Не публікуйте у відкритому доступі.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      КП «Муніципальна варта» Дніпровської міської ради · Сектор МАСЦО · 2026
+    </div>
+  </footer>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
