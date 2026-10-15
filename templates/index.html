@@ -23,7 +23,26 @@
 
   <main class="container">
     <h1>Автоматизоване робоче місце чергового сектору МАСЦО</h1>
-    <p class="lead">Відправка оповіщень у Telegram, включно з GIF-анімаціями.</p>
+    <p class="lead">Ручне оголошення тривоги надсилає в Telegram текст і GIF-анімацію разом.</p>
+
+    <section class="panel alarm-panel">
+      <h2>Ручний режим</h2>
+      <p class="hint">Кнопка «Оголосити тривогу» викликає sendAnimation: повідомлення йде підписом до GIF, а не окремим текстом.</p>
+      <div class="gif-preview">
+        <img src="/alert-gif" alt="GIF тривоги" id="gifPreview">
+        <span>{% if gif_is_custom %}Свій файл{% else %}Стандартна анімація{% endif %}</span>
+      </div>
+      <div class="alarm-actions">
+        <button type="button" class="danger" id="alarmStart">Оголосити тривогу</button>
+        <button type="button" class="quiet" id="alarmClear">Відбій</button>
+      </div>
+      <form id="gifForm" class="gif-form">
+        <label for="duty_gif">Замінити GIF тривоги</label>
+        <input type="file" id="duty_gif" name="gif_file" accept="image/gif,video/mp4" required>
+        <button type="submit" class="quiet">Зберегти GIF</button>
+      </form>
+      <div id="alarmResult" class="result" hidden></div>
+    </section>
 
     <section class="panel">
       <h2>Відправити повідомлення</h2>

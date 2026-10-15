@@ -73,7 +73,38 @@ button.primary {
   font-weight: 600;
   cursor: pointer;
 }
-button.primary:hover { background: #122a36; }
+button.danger {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+button.danger:hover { background: #7a2222; }
+button.quiet {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--navy);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.alarm-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+.hint { margin: 0 0 12px; color: #444; }
+.gif-preview { display: flex; align-items: center; gap: 12px; }
+.gif-preview img {
+  width: 160px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #1a1a1a;
+}
+.gif-form { display: flex; flex-wrap: wrap; gap: 8px; align-items: end; }
+.gif-form input { width: auto; flex: 1; min-width: 180px; }
+.status-badge.alert { background: var(--danger); }
 
 .result {
   margin-top: 16px;
